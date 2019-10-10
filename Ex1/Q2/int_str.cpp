@@ -40,8 +40,10 @@ char* intToStr(int number) {
 		temp /= 10;
 	} while(temp);
 
+	char* str = (char *) calloc(length + 1, sizeof(char));
 
-	char* str = (char *) calloc(length, sizeof(char));
+	str[length] = '\0';
+
 	int digit;
 	do {
 		digit = number % 10;
