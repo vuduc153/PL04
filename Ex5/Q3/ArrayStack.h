@@ -60,13 +60,34 @@ public:
         if(this == &stack) return *this;
         _num_items = stack._num_items;
         _allocated_size = stack._allocated_size;
-        delete _items;
+        delete[] _items;
         _items = new int[_allocated_size];
         int i;
         for(i = 0; i < _allocated_size; i ++) 
             _items[i] = stack._items[i];
         return *this;
     }
+
+    // Move Constructor:
+    ArrayStack(ArrayStack&& stack) {
+        std::cout << "Move Constructor" << std::endl;
+        _num_items = stack._num_items;
+        _allocated_size = stack._allocated_size;
+        _items = stack._items;
+        stack._items = nullptr;
+    }
+
+    // Move Assignment Operator:
+    ArrayStack& operator= (ArrayStack&& stack) {
+        std::cout << "Move Assignment Operator" << std::endl;
+        if(this == &stack) return *this;
+        _num_items = stack._num_items;
+        _allocated_size = stack._allocated_size;
+        delete[] _items;
+        _items = stack._items;
+        stack._items = nullptr;
+        return *this;
+    }   
 
     // Destructor::
     ~ArrayStack() {

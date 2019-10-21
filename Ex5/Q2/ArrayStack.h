@@ -60,7 +60,7 @@ public:
         if(this == &stack) return *this;
         _num_items = stack._num_items;
         _allocated_size = stack._allocated_size;
-        delete _items;
+        delete[] _items;
         _items = new int[_allocated_size];
         int i;
         for(i = 0; i < _allocated_size; i ++) 
