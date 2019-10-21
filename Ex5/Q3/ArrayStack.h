@@ -28,7 +28,7 @@ class ArrayStack {
 
 public:
     // Constructors:
-    ArrayStack(): _num_items(0), _allocated_size(0), _items(NULL) {}
+    ArrayStack(): _num_items(0), _allocated_size(0), _items(nullptr) {}
     /* COMPLETE ... init _num_items to 0, _allocated_size to 0, and
      * set _items to a null pointer, 
      */
