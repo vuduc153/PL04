@@ -10,11 +10,11 @@ private:
 public:
 	Polygon(Point2D* vertices_list, int N);
 
-	virtual string get_name() const;
+	virtual string get_name() const override;
 
-	virtual float compute_area() const;
+	virtual float compute_area() const override;
 
-	virtual void translate(float tx, float ty);
+	virtual void translate(float tx, float ty) override;
 };
 
 #endif

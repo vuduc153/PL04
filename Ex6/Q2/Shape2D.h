@@ -10,6 +10,8 @@ public:
 	virtual float compute_area() const = 0;
 
 	virtual void translate(float tx, float ty) = 0; 
+
+	virtual ~Shape2D() {}
 };
 
 #endif
