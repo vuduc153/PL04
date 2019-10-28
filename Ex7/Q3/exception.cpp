@@ -6,8 +6,6 @@
 
 using namespace std;
 
-// NOT FINISHED
-
 class LogFile {
 private:
 	FILE *p;
