@@ -115,7 +115,7 @@ std::ostream& operator<< (std::ostream& os, const Mat3x3 &m) {
 		for(int j = 0; j < MATRIX_SIZE; j ++) {
 			s << ' ' << m(i, j) << ' ';
 		}
-		s << ']' << std::endl;;
+		s << ']' << std::endl;
 	} 
 	s << std::endl;
 	return os << s.str();
