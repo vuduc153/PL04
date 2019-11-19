@@ -10,8 +10,15 @@ vector<Point> find_k_closest(int k, vector<Point> points) {
 	priority_queue<Point, vector<Point>, Compare> sorted;
 	vector<Point> result;
 	
+	Compare comparefunc;
+
 	for(int i = 0; i < points.size(); ++i) {
-		sorted.push(points[i]);
+		if(sorted.size() <= k)
+			sorted.push(points[i]);
+		else if(comparefunc(points[i], sorted.top())) {
+			sorted.pop();
+			sorted.push(points[i]);
+		}
 	}
 
 	for(int i = 0; i < k; ++i) {

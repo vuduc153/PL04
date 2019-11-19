@@ -6,5 +6,5 @@ double distance(const Point& p) {
 }
 
 bool Compare::operator() (const Point& first, const Point& second) {
-	return distance(first) > distance(second);
+	return distance(first) < distance(second);
 }
