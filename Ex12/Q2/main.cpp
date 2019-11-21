@@ -13,7 +13,7 @@ vector<Point> find_k_closest(int k, vector<Point> points) {
 	Compare comparefunc;
 
 	for(int i = 0; i < points.size(); ++i) {
-		if(sorted.size() <= k)
+		if(sorted.size() < k)
 			sorted.push(points[i]);
 		else if(comparefunc(points[i], sorted.top())) {
 			sorted.pop();
